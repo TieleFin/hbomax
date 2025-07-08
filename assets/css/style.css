@@ -17,7 +17,7 @@
     --primary-color: #020228;
     --secondary-color: #ff00e5;
     --tertiary-color: #b535f6;
-    --fourth-color:#8628b6;
+    --fourth-color: #8628b6;
     --btn-bg-color-gradient: linear-gradient(45deg, #9b34ef 0%, #490cb0 20%, transparent 50%);
     --btn-link-bg-color: #fff;
     --btn-link-color: #000;
@@ -38,6 +38,7 @@
 body {
     background-color: var(--primary-color);
     color: var(--text-color);
+    width: 100%;
 }
 
 section {
@@ -61,7 +62,8 @@ section {
     width: 200px;
 }
 
-.menu__item, .menu__becorated {
+.menu__item,
+.menu__becorated {
     margin-left: 24px;
     font-size: 0.75rem;
     font-weight: bold;
@@ -197,6 +199,15 @@ section {
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
+    position: relative;
+    z-index: 2;
+}
+
+.gradient-transition {
+    content: "";
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(0deg, var(--primary-color), transparent);
 }
 
 .main__section {
@@ -486,27 +497,33 @@ section {
         padding: 10px;
         display: block;
         position: relative;
-        width: 430px;
+        min-width: 350px;
         height: 120px;
         text-align: center;
         align-content: space-between;
+        align-items: center;
     }
 
     .menu__logo {
-        padding-bottom: 20px;
+        padding: 20px 0;
         width: 150px;
-    }
-
-    .menu__item {
-        margin: 10px;
     }
 
     .header__images {
         justify-content: center;
     }
 
+    .header__title {
+        max-width: 300px;
+    }
+
+    .header__title__second small {
+        font-size: 0.85rem;
+    }
+
     .header__section {
         padding-bottom: 150px;
+        padding-top: 70px;
     }
 
     .header__section::after {
